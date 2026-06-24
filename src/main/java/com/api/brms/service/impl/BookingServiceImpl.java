@@ -42,10 +42,9 @@ public class BookingServiceImpl implements BookingService {
         details.setActive(true);
         Booking saved = bookingRepo.save(details);
 
-        // create contract
         Contract c = new Contract();
         c.setBooking(saved);
-        c.setTerms("Standard terms...");
+        c.setTerms("Standard boarding-room rental terms");
         c.setSigned(false);
         contractRepo.save(c);
 

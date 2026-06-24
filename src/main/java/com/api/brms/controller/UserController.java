@@ -1,7 +1,7 @@
 package com.api.brms.controller;
 
 import com.api.brms.dto.UserRequest;
-import com.api.brms.dto.UserResponse;    // ← make sure this line is present
+import com.api.brms.dto.UserResponse;
 import com.api.brms.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "${app.cors.allowed-origins:*}")
 public class UserController {
 
     private final UserService userService;
